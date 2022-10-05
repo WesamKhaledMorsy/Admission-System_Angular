@@ -37,6 +37,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChatComponent } from './chat/chat.component';
 
 import { FilemanagerComponent } from './filemanager/filemanager.component';
+import { StudentsComponent } from './students/students.component';
+import { RoundsComponent } from './rounds/rounds.component';
+import { TracksComponent } from './tracks/tracks.component';
+import { TrackListComponent } from './tracks/track-list/track-list.component';
+import { TrackCreateComponent } from './tracks/track-create/track-create.component';
+import { RoundListComponent } from './rounds/round-list/round-list.component';
+import { RoundCreateComponent } from './rounds/round-create/round-create.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
+import { StudentCreateComponent } from './students/student-create/student-create.component';
+import { StudentProfileComponent } from './students/student-profile/student-profile.component';
+import { TrackDetailsComponent } from './tracks/track-details/track-details.component';
+import { RoundDetailsComponent } from './rounds/round-details/round-details.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -45,7 +57,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 ]);
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent],
+  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, StudentsComponent, RoundsComponent, TracksComponent, TrackListComponent, TrackCreateComponent, RoundListComponent, RoundCreateComponent, StudentListComponent, StudentCreateComponent, StudentProfileComponent, TrackDetailsComponent, RoundDetailsComponent],
   imports: [
     CommonModule,
     FormsModule,
