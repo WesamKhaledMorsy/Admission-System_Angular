@@ -8,7 +8,7 @@ import { FilemanagerComponent } from './filemanager/filemanager.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' },
- 
+
   { path: 'dashboard', component: DefaultComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'chat', component: ChatComponent },
@@ -28,7 +28,13 @@ const routes: Routes = [
   { path: 'tables', loadChildren: () => import('./tables/tables.module').then(m => m.TablesModule) },
   { path: 'icons', loadChildren: () => import('./icons/icons.module').then(m => m.IconsModule) },
   { path: 'charts', loadChildren: () => import('./chart/chart.module').then(m => m.ChartModule) },
-  { path: 'maps', loadChildren: () => import('./maps/maps.module').then(m => m.MapsModule) }
+  { path: 'maps', loadChildren: () => import('./maps/maps.module').then(m => m.MapsModule) },
+  {path:'round', loadChildren:()=> import('./rounds/rounds.module').then((m=>m.RoundsModule))},
+  {path:'track',loadChildren:()=> import('./tracks/tracks.module').then((m=>m.TracksModule))},
+  {path:'interview',loadChildren:()=>import('./interview/interview.module').then((m=>m.InterviewModule))},
+  {path:'interviewer',loadChildren:()=>import('./interviewer/interviewer.module').then((m=>m.InterviewerModule))},
+  {path:'student',loadChildren:()=>import('./students/students.module').then((m=>m.StudentsModule))},
+
 ];
 
 @NgModule({

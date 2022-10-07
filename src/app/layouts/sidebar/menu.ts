@@ -61,7 +61,7 @@ export const MENU: MenuItem[] = [
         label: 'MENUITEMS.CHAT.TEXT',
         icon: 'bx-chat',
         link: '/chat',
-        
+
     },
     {
         id: 11,
@@ -207,19 +207,19 @@ export const MENU: MenuItem[] = [
                         id:33 ,
                         label: 'MENUITEMS.EMAIL.LIST.TEMPLATE.LIST.BASIC',
                         link: '/email/basic',
-                        parentId:32 
+                        parentId:32
                     },
                     {
                         id:34 ,
                         label: 'MENUITEMS.EMAIL.LIST.TEMPLATE.LIST.ALERT',
                         link: '/email/alert',
-                        parentId:32 
+                        parentId:32
                     },
                     {
                         id:35 ,
                         label: 'MENUITEMS.EMAIL.LIST.TEMPLATE.LIST.BILLING',
                         link: '/email/billing',
-                        parentId:32 
+                        parentId:32
                     }
                 ]
             }
@@ -823,6 +823,75 @@ export const MENU: MenuItem[] = [
                 ]
             },
         ]
-    }
+    },
+    // ! -----------------------------------------
+    {
+      id: 130,
+        label: 'Rounds',
+        icon: 'bx bxl-slack',
+        subItems: [
+          {
+            id: 131,
+            label: 'Round List',
+            link: '/round/roundList',
+            parentId: 130,
+          }
+        ]
+    },
+    {
+      id: 132,
+        label: 'Track',
+        icon: 'bx bx-git-repo-forked',
+        subItems: [
+          {
+            id: 133,
+            label: 'Track List',
+            link: '/track/trackList',
+            parentId: 132,
+          }
+        ]
+    },
+    {
+      id: 134,
+        label: 'Interviews',
+        icon: 'bx bx-calendar-event',
+        subItems: [
+          {
+            id: 135,
+            label: 'Interview List',
+            link: '/interview/interviewlist',
+            parentId: 134,
+          }
+        ]
+    },
+    {
+      id: 136,
+        label: 'Interviewer',
+        icon: 'bx bx-male',
+        subItems: [
+          {
+            id: 137,
+            label: 'Interviewer List',
+            link: '/interviewer/interviewerList',
+            parentId: 136,
+          }
+        ]
+    },
+    {
+      id: 138,
+        label: 'Students',
+        icon: 'bx bx-group',
+        subItems: [
+          {
+            id: 139,
+            label: 'Students List',
+            link: '/student/studentList',
+            parentId: 138,
+          }
+        ]
+    },
+
+
+
 ];
 
