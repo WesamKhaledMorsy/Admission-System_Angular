@@ -40,23 +40,9 @@ import { FilemanagerComponent } from './filemanager/filemanager.component';
 import { StudentsComponent } from './students/students.component';
 import { RoundsComponent } from './rounds/rounds.component';
 import { TracksComponent } from './tracks/tracks.component';
-import { TrackListComponent } from './tracks/track-list/track-list.component';
-import { TrackCreateComponent } from './tracks/track-create/track-create.component';
-import { RoundListComponent } from './rounds/round-list/round-list.component';
-import { RoundCreateComponent } from './rounds/round-create/round-create.component';
-import { StudentListComponent } from './students/student-list/student-list.component';
-import { StudentCreateComponent } from './students/student-create/student-create.component';
-import { StudentProfileComponent } from './students/student-profile/student-profile.component';
-import { TrackDetailsComponent } from './tracks/track-details/track-details.component';
-import { RoundDetailsComponent } from './rounds/round-details/round-details.component';
 import { InterviewerComponent } from './interviewer/interviewer.component';
-import { InterviewerListComponent } from './interviewer/interviewer-list/interviewer-list.component';
-import { InterviewerCreateComponent } from './interviewer/interviewer-create/interviewer-create.component';
-import { InterviewerDetailsComponent } from './interviewer/interviewer-details/interviewer-details.component';
 import { InterviewComponent } from './interview/interview.component';
-import { InterviewListComponent } from './interview/interview-list/interview-list.component';
-import { InterviewCreateComponent } from './interview/interview-create/interview-create.component';
-import { InterviewDetailsComponent } from './interview/interview-details/interview-details.component';
+
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -65,7 +51,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 ]);
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, StudentsComponent, RoundsComponent, TracksComponent, TrackListComponent, TrackCreateComponent, RoundListComponent, RoundCreateComponent, StudentListComponent, StudentCreateComponent, StudentProfileComponent, TrackDetailsComponent, RoundDetailsComponent, InterviewerComponent, InterviewerListComponent, InterviewerCreateComponent, InterviewerDetailsComponent, InterviewComponent, InterviewListComponent, InterviewCreateComponent, InterviewDetailsComponent],
+  declarations: [CalendarComponent, ChatComponent,
+     FilemanagerComponent, StudentsComponent,
+      RoundsComponent, TracksComponent,
+        InterviewerComponent,
+           InterviewComponent,
+          ],
   imports: [
     CommonModule,
     FormsModule,

@@ -9,6 +9,7 @@ const routes :Routes =[
   {path:'createStudent',component:StudentCreateComponent},
   {path:'studentList',component:StudentListComponent},
   {path:'studentProfile',component:StudentProfileComponent},
+  {path:':id/edit',component:StudentCreateComponent},
   {path:'',redirectTo:'studentList'}
 ]
 

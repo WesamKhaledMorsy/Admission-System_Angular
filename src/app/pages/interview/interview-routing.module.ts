@@ -10,7 +10,8 @@ const routes : Routes=[
   {path:'createInterview',component: InterviewCreateComponent},
   {path:'detailsInterview',component:InterviewDetailsComponent},
   {path :'interviewlist',component:InterviewListComponent},
-  {path:'', redirectTo:'interviewlist'}
+  {path:':id/edit',component:InterviewCreateComponent},
+  {path:'', redirectTo:'interviewlist',pathMatch:'full'}
 ]
 
 @NgModule({

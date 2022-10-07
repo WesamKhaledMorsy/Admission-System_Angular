@@ -6,10 +6,12 @@ import { RoundDetailsComponent } from './round-details/round-details.component';
 import { RoundListComponent } from './round-list/round-list.component';
 
 const routes : Routes=[
+  {path:'', redirectTo:'roundList',pathMatch:'full'},
   {path:'createRound',component: RoundCreateComponent},
+  {path :'roundList',component:RoundListComponent },
   {path:'detailsRound',component:RoundDetailsComponent},
-  {path :'roundList',component:RoundListComponent},
-  {path:'', redirectTo:'roundList'}
+  {path:':id/edit',component:RoundCreateComponent},
+ 
 ]
 
 @NgModule({

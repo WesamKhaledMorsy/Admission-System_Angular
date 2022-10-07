@@ -9,6 +9,7 @@ const routes : Routes=[
   {path:'createInterviewer',component: InterviewerCreateComponent},
   {path:'detailsInterviewer',component:InterviewerDetailsComponent},
   {path :'interviewerList',component:InterviewerListComponent},
+  {path:':id/edit',component:InterviewerCreateComponent},
   {path:'', redirectTo:'interviewerList'}
 ]
 
