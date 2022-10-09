@@ -1,1 +1,213 @@
-<p>student-list works!</p>
+<!--
+<div class="container">
+  <div class="row">
+    <p>track-list works!</p>
+    <a>
+      <button [routerLink]="['/track/detailsTrack']">Details</button>
+    </a>
+  </div>
+</div> -->
+<!-- <p>round-list works!</p>
+<div class="container">
+  <div class="row">
+    <a>
+      <button [routerLink]="['/round/detailsRound']">Details</button>
+    </a>
+
+
+  </div>
+
+</div> -->
+
+<div class="container-fluid">
+  <!-- <app-page-title title="Projects List" ></app-page-title> -->
+
+  <div class="row">
+    <div class="col-lg-12">
+        <!--! search  -->
+         <div class="col-sm-4">
+          <div class="search-box me-2 mb-2 d-inline">
+            <div class="position-relative">
+              <!-- <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="term"> -->
+              <input type="text" name="searchText" class="form-control"
+                     placeholder="Search..." [(ngModel)]="searchText">
+              <i class="bx bx-search-alt search-icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-sm-4">
+          <div class="search-box me-2 mb-2 d-inline">
+            <div class="position-relative">
+              <input type="text" name="searchText" class="form-control" placeholder="Project Name" [(ngModel)]="searchName">
+            </div>
+          </div>
+        </div> -->
+
+
+          <!--! -------- -->
+
+
+          <!-- ! Filter-->
+
+          <div class="row">
+            <div class="col-4 d-inline-block">
+                <label>Student</label>
+                <select
+                id="name"
+                name="name"
+                 class="form-select"
+                [(ngModel)]="studentId"
+              >
+                  <option value="0" selected>Student Name</option>
+                  <option  *ngFor="let student of selectStudents"
+                  [ngValue]="student.id">
+                    {{student.name}}
+                  </option>
+                </select>
+            </div>
+
+          <div class="col-3 d-inline-block">
+              <label>phone number</label>
+              <!-- <select id="startDate" class="form-select"  name="startDate" >
+                <option value="0" selected>Select Prefix</option>
+                <option  *ngFor="let round of selectRounds"
+                [ngValue]="round.id">
+                  {{round.startDate}}
+                </option>
+              </select> -->
+              <input type="text" id="PhoneNubmer" class="form-control"
+              [(ngModel)]="PhoneNubmer">
+          </div>
+    </div>
+
+        <div class="btn-group btn-group-example mb-3" role="group">
+              <button type="button" class="btn btn-primary w-xs mt-2" (click)="FilterStudents()" >
+
+              Search<i class="bx bx-search-alt search-icon"></i></button>
+              <button type="button" class="btn btn-danger w-xs mt-2" (click)="Reset()">
+              Reset  </button>
+        </div>
+      </div>
+
+          <!--!-->
+      <div class>
+        <a
+        class="btn btn-outline-primary mb-3"
+        [routerLink]="['/student/createStudent']"
+        routerLinkActive="active">
+          Create Student
+        </a>
+
+        <div class="table-responsive">
+          <table class="table project-list-table table-nowrap align-middle table-borderless">
+            <thead>
+              <tr>
+                <!-- <th scope="col" style="width: 100px">Interview</th> -->
+                <th scope="col">Name</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">Email</th>
+                <th scope="col">@Round</th>
+                <th scope="col">Graduation year</th>
+                <th scope="col">Grade</th>
+                <th scope="col">University</th>
+                <th scope="col">Interviewer</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--  | search:searchText -->
+                <tr *ngFor="let student of selectStudents" >
+                <!-- <td>
+                  <h5 class="text-truncate font-size-14" >
+                    <a href="javascript: void(0);" class="text-dark"
+                    routerLinkActive="active"
+                    [routerLink]="['/interviewer/detailsInterviewer',interviewer.id]"
+                    >{{interviewer.interviewName}}</a>
+                  </h5>
+
+
+                </td> -->
+                <td>
+                  <a [routerLink]="['/student/studentProfile',student.id]"
+                  routerLinkActive="active" >
+                    {{student.name}}
+                  </a>
+
+                </td>
+                <td>{{student.phoneNubmer}}</td>
+                <td>{{student.email }}</td>
+
+                <td>
+                  <a [routerLink]="['/round/detailsRound',student.roundId]"
+                  routerLinkActive="active" >
+                    {{student.roundName}}
+                  </a>
+
+                </td>
+                <td>
+                    {{student.graduationYear}}
+                </td>
+                <td>
+                  {{student.grade}}
+              </td>
+                <td>
+                  {{student.university}}
+               </td>
+               <td>
+                <a [routerLink]="['/interviewer/detailsInterviewer',student.interviewerId]"
+                routerLinkActive="active" >
+                  {{student.interviewerName}}
+                </a>
+
+              </td>
+              <td>
+                {{student.status}}
+             </td>
+                <td>
+                      <a
+                      [routerLink]="['/student/edit',student.id]"
+                      routerLinkActive="active" style="margin-left:2% ;"
+                      ><i class="fa fa-marker text-success"></i> Edit</a>
+
+                      <a
+                      type="button"s
+                      style="cursor: pointer;" style="margin-right:2% ;"
+                      (click) =onDeleteStudent(student.id)>
+                      <i class="fa fa-trash text-danger"></i> Delete</a>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- <app-pagination
+            [total-items]="Counter"
+            [page-size]="_pageSize"
+            (page-changed)="onPageChange($event)"
+          ></app-pagination> -->
+
+        </div>
+      </div>
+    </div>
+
+
+  <!-- end row -->
+
+  <!-- <div class="row">
+    <div class="col-12">
+      <div class="text-center my-3">
+        <a href="javascript:void(0);" class="text-success">
+          <i class="bx bx-loader bx-spin font-size-18 align-middle mr-2"></i> Load more
+        </a>
+      </div>
+    </div> -->
+    <!-- end col-->
+<!-- </div> -->
+  <!-- end row -->
+<!-- </div> -->
+
+
+
+
