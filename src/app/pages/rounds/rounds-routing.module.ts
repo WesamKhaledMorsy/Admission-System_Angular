@@ -10,8 +10,9 @@ const routes : Routes=[
   {path:'createRound',component: RoundCreateComponent},
   {path :'roundList',component:RoundListComponent },
   {path:'detailsRound',component:RoundDetailsComponent},
-  {path:':id/edit',component:RoundCreateComponent},
- 
+  {path : 'detailsRound/:id',component:RoundDetailsComponent},
+  {path:'edit/:id',component:RoundCreateComponent},
+
 ]
 
 @NgModule({
