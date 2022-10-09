@@ -34,7 +34,7 @@
             <div class="col-sm-4 col-8">
               <div class="mt-4">
                 <h5 class="font-size-14"><i class="bx bx-calendar me-1 text-primary"></i> Start Date</h5>
-                <p class="text-muted mb-0" >{{round.startDate }}</p>
+                <p class="text-muted mb-0" >{{round.startDate | date:'dd/MM/yyyy'  }}</p>
               </div>
             </div>
 
@@ -44,21 +44,21 @@
             <div class="col-sm-4 col-8">
               <div class="mt-4">
                 <h5 class="font-size-14"><i class="bx bx-calendar me-1 text-primary"></i> Due Date</h5>
-                <p class="text-muted mb-0" >{{round.endDate }}</p>
+                <p class="text-muted mb-0" >{{round.endDate| date:'dd/MM/yyyy' }}</p>
               </div>
             </div>
 
             <div class="col-sm-4 col-8">
               <div class="mt-4">
                 <h5 class="font-size-14"><i class="bx bx-calendar-check me-1 text-primary"></i> Start Admission Date</h5>
-                <p class="text-muted mb-0"  >{{round.startAdmission }}</p>
+                <p class="text-muted mb-0"  >{{round.startAdmission| date:'dd/MM/yyyy' }}</p>
               </div>
             </div>
 
             <div class="col-sm-4 col-8">
               <div class="mt-4">
                 <h5 class="font-size-14"><i class="bx bx-calendar-check me-1 text-primary"></i> End Admission Date</h5>
-                <p class="text-muted mb-0"  >{{round.endAdmission }}</p>
+                <p class="text-muted mb-0"  >{{round.endAdmission| date:'dd/MM/yyyy' }}</p>
               </div>
             </div>
 

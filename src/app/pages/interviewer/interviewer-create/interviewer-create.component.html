@@ -1,1 +1,93 @@
-<p>interviewer-create works!</p>
+
+<div class="container-fluid">
+  <!-- <h1 *ngIf="isAddMode">Add New Round<h1>
+  <h1 *ngIf="!isAddMode">Edit Round <h1> -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <form class="card-body" #interviewerForm="ngForm"  (ngSubmit)="onSubmit(interviewerForm)">
+          <h4 class="card-title mb-4">Create New Interviewer</h4>
+
+            <div class="row mb-4">
+              <label for="interviewerName" class="col-form-label col-lg-2" >Name</label>
+                <div class="col-lg-10">
+                <input id="interviewerName"
+                name="interviewerName" type="text" class="form-control"
+                  placeholder="Enter Interviewer Name..."
+                  [(ngModel)]="interviewerInput.interviewerName">
+              </div>
+            </div>
+
+
+
+
+            <div class="row mb-4">
+              <label class="col-form-label col-lg-2">Start Date (mm/dd/yyyy)</label>
+              <div class="col-lg-10">
+
+                <input   class="form-control"
+                name="startDate" placeholder="Start Date"
+                type="date" name="startDate" #startDate="ngModel"
+                [(ngModel)]="interviewerInput.startDate" />
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label class="col-form-label col-lg-2">End Date (mm/dd/yyyy)</label>
+              <div class="col-lg-10">
+
+                <input type="Date"  class="form-control" name="endDate"
+                #endDate="ngModel"
+                [(ngModel)]="interviewerInput.endDate" >
+
+              </div>
+            </div>
+
+
+            <!-- <div class="row mb-4">
+              <label for="interviewerId" class="col-form-label col-lg-2" >Round</label>
+                <div class="col-lg-10">
+                  <select id="roundId" class="form-control"
+                  name="roundId"  [(ngModel)]="interviewerInput.roundId">
+                      <option value="0" selected>Select Round Name</option>
+                      <option *ngFor="let round of rounds"
+                      [ngValue]="round.id">
+                        {{round.roundName}}
+                        </option>
+
+                  </select>
+              </div>
+            </div> -->
+
+            <div class="row mb-4">
+              <label for="adminId" class="col-form-label col-lg-2" >Admin</label>
+                <div class="col-lg-10">
+                <input id="adminId"
+                name="adminId" type="text" class="form-control"
+                  placeholder="Enter Admin Name..."
+                  [(ngModel)]="interviewerInput.adminId">
+              </div>
+            </div>
+
+
+          <div class="row justify-content-end">
+            <div class="col-lg-10" >
+              <button
+              type="submit"
+              class="btn btn-primary"
+              >{{ isAddMode ? "Create Interviewer" : "Edit Interviewer" }}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- </ng-template> -->
+
+<!-- end row -->
+
+<!-- container-fluid -->
+
+
+

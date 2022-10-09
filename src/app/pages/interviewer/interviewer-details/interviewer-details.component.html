@@ -1,1 +1,56 @@
-<p>interviewer-details works!</p>
+<div class="container-fluid">
+  <!-- start page title -->
+
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="card">
+        <div class="card-body" >
+          <div class="media" *ngFor="let interviewer of InterviewerDetails">
+            <img src="assets/images/companies/img-1.png" alt="" class="avatar-sm me-4">
+
+            <div class="font-size-15 mt-4">
+              <h5 class="text-truncate font-size-15">Interviewer Details</h5>
+              <p class="text-muted"  >{{interviewer.interviewerName}}</p>
+            </div>
+          </div>
+
+             <h5 class="text-truncate font-size-15">Interviewer</h5>
+
+
+            <div class="row task-dates">
+              <div class="col-sm-4 col-8">
+                <div class="mt-4 ">
+                  <h5 class="font-size-14">Interviewer Name</h5>
+                   <p class="text-muted mb-0">{{interviewer.interviewerName}}</p>
+                 </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row task-dates">
+            <div class="col-sm-4 col-8">
+              <div class="mt-4">
+                <h5 class="font-size-14"><i class="bx bx-calendar me-1 text-primary"></i> Start Date</h5>
+                <p class="text-muted mb-0" >{{interviewer.startDate}}</p>
+              </div>
+            </div>
+
+
+
+          <div class="row task-dates">
+            <div class="col-sm-4 col-8">
+              <div class="mt-4">
+                <h5 class="font-size-14"><i class="bx bx-calendar me-1 text-primary"></i> Due Date</h5>
+                <p class="text-muted mb-0" >{{interviewer.endDate}}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+

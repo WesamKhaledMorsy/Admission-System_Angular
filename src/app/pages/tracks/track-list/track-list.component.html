@@ -127,7 +127,8 @@
                 <td>{{track.endDate | date:'dd/MM/yyyy'}}</td>
 
                 <td>
-                  <a>
+                  <a [routerLink]="['/round/detailsRound',track.roundId]"
+                  routerLinkActive="active" >
                     {{track.roundName}}
                   </a>
 
