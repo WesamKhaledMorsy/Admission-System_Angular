@@ -82,7 +82,7 @@
     </div>
 
         <div class="btn-group btn-group-example mb-3" role="group">
-              <button type="button" class="btn btn-primary w-xs mt-2" (click)="FilterTracks()" >
+              <button type="button" class="btn btn-primary w-xs mt-2" (click)="FilterInterviewers()" >
 
               Search<i class="bx bx-search-alt search-icon"></i></button>
               <button type="button" class="btn btn-danger w-xs mt-2" (click)="Reset()">
@@ -132,8 +132,8 @@
                   </a>
 
                 </td>
-                <td>{{interviewer.startDate| date:'dd/MM/yyyy '}}</td>
-                <td>{{interviewer.endDate | date:'dd/MM/yyyy'}}</td>
+                <td>{{interviewer.startDate| date:'MMM d, y, h:mm:ss a'}}</td>
+                <td>{{interviewer.endDate | date:'MMM d, y, h:mm:ss a'}}</td>
 
                 <td>
                   <a [routerLink]="['/round/detailsRound',interviewer.roundId]"

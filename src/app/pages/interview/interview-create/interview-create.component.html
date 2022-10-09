@@ -1,1 +1,108 @@
-<p>interview-create works!</p>
+
+<div class="container-fluid">
+  <!-- <h1 *ngIf="isAddMode">Add New Round<h1>
+  <h1 *ngIf="!isAddMode">Edit Round <h1> -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <form class="card-body" #interviewForm="ngForm"  (ngSubmit)="onSubmit(interviewForm)">
+          <h4 class="card-title mb-4">Create New Interview</h4>
+
+            <div class="row mb-4">
+              <label for="interviewName" class="col-form-label col-lg-2" >Name</label>
+                <div class="col-lg-10">
+                <input id="interviewName"
+                name="interviewName" type="text" class="form-control"
+                  placeholder="Enter Interview Name..."
+                  [(ngModel)]="interviewInput.interviewName">
+              </div>
+            </div>
+
+
+
+
+            <div class="row mb-4">
+              <label class="col-form-label col-lg-2">Start Date (mm/dd/yyyy)</label>
+              <div class="col-lg-10">
+
+                <input   class="form-control"
+                name="startDate" placeholder="Start Date"
+                type="date" name="startDate" #startDate="ngModel"
+                [(ngModel)]="interviewInput.startDate" />
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label class="col-form-label col-lg-2">End Date (mm/dd/yyyy)</label>
+              <div class="col-lg-10">
+
+                <input type="Date"  class="form-control" name="endDate"
+                #endDate="ngModel"
+                [(ngModel)]="interviewInput.endDate" >
+
+              </div>
+            </div>
+
+
+            <div class="row mb-4">
+              <label for="interviewerId" class="col-form-label col-lg-2" >Interviewer</label>
+                <div class="col-lg-10">
+                  <select id="interviewerId" class="form-control"
+                  name="interviewerId"  [(ngModel)]="interviewInput.interviewerId">
+                      <option value="0" selected>Select Interviewer Name</option>
+                      <option *ngFor="let interviewer of interviewers"
+                      [ngValue]="interviewer.id">
+                        {{interviewer.interviewerName}}
+                        </option>
+
+                  </select>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label for="studentId" class="col-form-label col-lg-2" >Student</label>
+                <div class="col-lg-10">
+                  <select id="studentId" class="form-control"
+                  name="studentId"  [(ngModel)]="interviewInput.studentId">
+                      <option value="0" selected>Select Student Name</option>
+                      <option *ngFor="let student of students"
+                      [ngValue]="student.id">
+                        {{student.studentName}}
+                        </option>
+
+                  </select>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label for="adminId" class="col-form-label col-lg-2" >Admin</label>
+                <div class="col-lg-10">
+                <input id="adminId"
+                name="adminId" type="text" class="form-control"
+                  placeholder="Enter Admin Name..."
+                  [(ngModel)]="interviewInput.adminId">
+              </div>
+            </div>
+
+
+          <div class="row justify-content-end">
+            <div class="col-lg-10" >
+              <button
+              type="submit"
+              class="btn btn-primary"
+              >{{ isAddMode ? "Create Interview" : "Edit Interview" }}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- </ng-template> -->
+
+<!-- end row -->
+
+<!-- container-fluid -->
+
+
+

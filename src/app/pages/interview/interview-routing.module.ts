@@ -8,9 +8,9 @@ import { InterviewListComponent } from './interview-list/interview-list.componen
 
 const routes : Routes=[
   {path:'createInterview',component: InterviewCreateComponent},
-  {path:'detailsInterview',component:InterviewDetailsComponent},
   {path :'interviewlist',component:InterviewListComponent},
-  {path:':id/edit',component:InterviewCreateComponent},
+  {path:'edit/:id',component:InterviewCreateComponent},
+  {path:'detailsInterview/:id' , component:InterviewDetailsComponent},
   {path:'', redirectTo:'interviewlist',pathMatch:'full'}
 ]
 

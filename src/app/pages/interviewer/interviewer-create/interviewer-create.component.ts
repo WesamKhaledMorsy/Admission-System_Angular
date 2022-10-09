@@ -77,7 +77,7 @@ onSubmit(form:NgForm){
   if(this.isAddMode){
     let interviewer = new Interviewer();
       interviewer.id =0 ;
-      interviewer.interviewName = form.value.interviewerName;
+      interviewer.interviewerName = form.value.interviewerName;
       interviewer.startDate = form.value.startDate;
       interviewer.endDate = form.value.endDate;
       //interviewer.roundId=form.value.roundId;
@@ -103,8 +103,8 @@ onSubmit(form:NgForm){
   else{
     this.interviewerInput.id=this.InterviewerId;
     this.interviewerServices.UpdateInterviewer(this.interviewerInput)
-        .subscribe((UpInterview)=>{
-        this.interviewerUpdated.emit(UpInterview);
+        .subscribe((UpInterviewer)=>{
+        this.interviewerUpdated.emit(UpInterviewer);
     }, )
 
     //!==

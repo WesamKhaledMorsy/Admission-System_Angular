@@ -1,1 +1,198 @@
-<p>interview-list works!</p>
+<!--
+<div class="container">
+  <div class="row">
+    <p>track-list works!</p>
+    <a>
+      <button [routerLink]="['/track/detailsTrack']">Details</button>
+    </a>
+  </div>
+</div> -->
+<!-- <p>round-list works!</p>
+<div class="container">
+  <div class="row">
+    <a>
+      <button [routerLink]="['/round/detailsRound']">Details</button>
+    </a>
+
+
+  </div>
+
+</div> -->
+
+<div class="container-fluid">
+  <!-- <app-page-title title="Projects List" ></app-page-title> -->
+
+  <div class="row">
+    <div class="col-lg-12">
+        <!--! search  -->
+         <div class="col-sm-4">
+          <div class="search-box me-2 mb-2 d-inline">
+            <div class="position-relative">
+              <!-- <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="term"> -->
+              <input type="text" name="searchText" class="form-control"
+                     placeholder="Search..." [(ngModel)]="searchText">
+              <i class="bx bx-search-alt search-icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-sm-4">
+          <div class="search-box me-2 mb-2 d-inline">
+            <div class="position-relative">
+              <input type="text" name="searchText" class="form-control" placeholder="Project Name" [(ngModel)]="searchName">
+            </div>
+          </div>
+        </div> -->
+
+
+          <!--! -------- -->
+
+
+          <!-- ! Filter-->
+
+          <div class="row">
+            <div class="col-4 d-inline-block">
+                <label>Interview</label>
+                <select
+                id="interviewerName"
+                name="interviewerName"
+                 class="form-select"
+                [(ngModel)]="interviewId"
+              >
+                  <option value="0" selected>Interview Name</option>
+                  <option  *ngFor="let Interview of selectInterviews"
+                  [ngValue]="Interview.id">
+                    {{Interview.interviewName}}
+                  </option>
+                </select>
+            </div>
+
+          <div class="col-3 d-inline-block">
+              <label >Interview StartDate</label>
+              <!-- <select id="startDate" class="form-select"  name="startDate" >
+                <option value="0" selected>Select Prefix</option>
+                <option  *ngFor="let round of selectRounds"
+                [ngValue]="round.id">
+                  {{round.startDate}}
+                </option>
+              </select> -->
+              <input type="date" id="startDate" class="form-control"
+              [(ngModel)]="startDate">
+          </div>
+    </div>
+
+        <div class="btn-group btn-group-example mb-3" role="group">
+              <button type="button" class="btn btn-primary w-xs mt-2" (click)="FilterInterviews()" >
+
+              Search<i class="bx bx-search-alt search-icon"></i></button>
+              <button type="button" class="btn btn-danger w-xs mt-2" (click)="Reset()">
+              Reset  </button>
+        </div>
+      </div>
+
+          <!--!-->
+      <div class>
+        <a
+        class="btn btn-outline-primary mb-3"
+        [routerLink]="['/interview/createInterview']"
+        routerLinkActive="active">
+          Create Interview
+        </a>
+
+        <div class="table-responsive">
+          <table class="table project-list-table table-nowrap align-middle table-borderless">
+            <thead>
+              <tr>
+                <!-- <th scope="col" style="width: 100px">Interview</th> -->
+                <th scope="col">Interview</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">@Round</th>
+                <th scope="col">Student</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--  | search:searchText -->
+                <tr *ngFor="let interview of selectInterviews" >
+                <!-- <td>
+                  <h5 class="text-truncate font-size-14" >
+                    <a href="javascript: void(0);" class="text-dark"
+                    routerLinkActive="active"
+                    [routerLink]="['/interviewer/detailsInterviewer',interviewer.id]"
+                    >{{interviewer.interviewName}}</a>
+                  </h5>
+
+
+                </td> -->
+                <td>
+                  <a [routerLink]="['/interview/detailsInterview',interview.id]"
+                  routerLinkActive="active" >
+                    {{interview.interviewName}}
+                  </a>
+
+                </td>
+                <td>{{interview.startDate| date:'MMM d, y, h:mm:ss a'}}</td>
+                <td>{{interview.endDate | date:'MMM d, y, h:mm:ss a'}}</td>
+
+                <td>
+                  <a [routerLink]="['/round/detailsRound',interview.roundId]"
+                  routerLinkActive="active" >
+                    {{interview.roundName}}
+                  </a>
+
+                </td>
+                <td>
+                  <a [routerLink]="['/student/detailsStudent',interview.studentId]"
+                  routerLinkActive="active" >
+                    {{interview.studentName}}
+                  </a>
+
+                </td>
+
+                <td>
+                      <a
+                      [routerLink]="['/interview/edit',interview.id]"
+                      routerLinkActive="active" style="margin-left:2% ;"
+                      ><i class="fa fa-marker text-success"></i> Edit</a>
+
+                      <a
+                      type="button"s
+                      style="cursor: pointer;" style="margin-right:2% ;"
+                      (click) =onDeleteInterview(interview.id)>
+                      <i class="fa fa-trash text-danger"></i> Delete</a>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- <app-pagination
+            [total-items]="Counter"
+            [page-size]="_pageSize"
+            (page-changed)="onPageChange($event)"
+          ></app-pagination> -->
+
+        </div>
+      </div>
+    </div>
+
+
+  <!-- end row -->
+
+  <!-- <div class="row">
+    <div class="col-12">
+      <div class="text-center my-3">
+        <a href="javascript:void(0);" class="text-success">
+          <i class="bx bx-loader bx-spin font-size-18 align-middle mr-2"></i> Load more
+        </a>
+      </div>
+    </div> -->
+    <!-- end col-->
+<!-- </div> -->
+  <!-- end row -->
+<!-- </div> -->
+
+
+
+

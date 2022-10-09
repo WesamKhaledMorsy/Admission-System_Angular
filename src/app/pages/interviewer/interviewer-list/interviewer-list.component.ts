@@ -65,7 +65,7 @@ export class InterviewerListComponent implements OnInit {
   _pageSize=20;
   selectedinterviewers : Interviewer[];
 
-  FilterTracks(){
+  FilterInterviewers(){
     this.getAllInterviewers(
       this.interviewerId,
       this.interviewerName,
@@ -141,7 +141,7 @@ export class InterviewerListComponent implements OnInit {
 
   Reset(){
     this.filteration= {};
-    this.FilterTracks();
+    this.FilterInterviewers();
   }
 
   interviews : Interview[];

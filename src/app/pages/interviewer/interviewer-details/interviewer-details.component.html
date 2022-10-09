@@ -34,7 +34,7 @@
             <div class="col-sm-4 col-8">
               <div class="mt-4">
                 <h5 class="font-size-14"><i class="bx bx-calendar me-1 text-primary"></i> Start Date</h5>
-                <p class="text-muted mb-0" >{{interviewer.startDate}}</p>
+                <p class="text-muted mb-0" >{{interviewer.startDate | date:'MMM d, y, h:mm:ss a'}}</p>
               </div>
             </div>
 
@@ -44,7 +44,7 @@
             <div class="col-sm-4 col-8">
               <div class="mt-4">
                 <h5 class="font-size-14"><i class="bx bx-calendar me-1 text-primary"></i> Due Date</h5>
-                <p class="text-muted mb-0" >{{interviewer.endDate}}</p>
+                <p class="text-muted mb-0" >{{interviewer.endDate | date: 'MMM d, y, h:mm:ss a'}}</p>
               </div>
             </div>
 

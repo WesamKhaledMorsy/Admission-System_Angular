@@ -7,7 +7,6 @@ import { InterviewerListComponent } from './interviewer-list/interviewer-list.co
 
 const routes : Routes=[
   {path:'createInterviewer',component: InterviewerCreateComponent},
-  {path:'detailsInterviewer',component:InterviewerDetailsComponent},
   {path :'interviewerList',component:InterviewerListComponent},
   {path:'edit/:id',component:InterviewerCreateComponent},
   {path:'detailsInterviewer/:id' , component:InterviewerDetailsComponent},
