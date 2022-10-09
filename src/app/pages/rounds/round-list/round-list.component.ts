@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ThemeService } from 'ng2-charts';
 import { Observable } from 'rxjs/internal/Observable';
 import Swal from 'sweetalert2';
 import { Round } from '../round.model';

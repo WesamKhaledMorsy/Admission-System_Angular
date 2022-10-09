@@ -12,8 +12,9 @@ const routes : Routes=[
   {path:'createTrack',component: TrackCreateComponent},
   {path:'detailsTrack',component:TrackDetailsComponent},
   {path :'trackList',component:TrackListComponent},
-  {path:':id/edit',component:TrackCreateComponent},
-  {path:'**', redirectTo:'trackList'}
+  {path:'edit/:id',component:TrackCreateComponent},
+  {path:'detailsTrack/:id',component:TrackDetailsComponent},
+  {path:'', redirectTo:'trackList',pathMatch:'full'}
 ]
 
 @NgModule({

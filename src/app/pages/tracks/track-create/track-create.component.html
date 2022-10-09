@@ -1,1 +1,98 @@
-<p>track-create works!</p>
+
+<div class="container-fluid">
+  <!-- <h1 *ngIf="isAddMode">Add New Round<h1>
+  <h1 *ngIf="!isAddMode">Edit Round <h1> -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <form class="card-body" #trackForm="ngForm"  (ngSubmit)="onSubmit(trackForm)">
+          <h4 class="card-title mb-4">Create New Track</h4>
+
+            <div class="row mb-4">
+              <label for="trackName" class="col-form-label col-lg-2" >Name</label>
+                <div class="col-lg-10">
+                <input id="trackName"
+                name="trackName" type="text" class="form-control"
+                  placeholder="Enter Track Name..."
+                  [(ngModel)]="trackInput.trackName">
+              </div>
+            </div>
+
+
+
+
+            <div class="row mb-4">
+              <label class="col-form-label col-lg-2">Start Date (mm/dd/yyyy)</label>
+              <div class="col-lg-10">
+
+                <input   class="form-control"
+                name="startDate" placeholder="Start Date"
+                type="date" name="startDate" #startDate="ngModel"
+                [(ngModel)]="trackInput.startDate" />
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label class="col-form-label col-lg-2">End Date (mm/dd/yyyy)</label>
+              <div class="col-lg-10">
+
+                <input type="Date"  class="form-control" name="endDate"
+                #endDate="ngModel"
+                [(ngModel)]="trackInput.endDate" >
+
+              </div>
+            </div>
+
+
+            <div class="row mb-4">
+              <label for="adminId" class="col-form-label col-lg-2" >Round</label>
+                <div class="col-lg-10">
+                <!-- <input id="roundId"
+                name="roundId" type="text" class="form-control"
+                  placeholder="Enter round Name..."
+                  [(ngModel)]="trackInput.roundId"> -->
+
+                  <select id="roundId" class="form-control"
+                  name="roundId"  [(ngModel)]="trackInput.roundId">
+                      <option value="0" selected>Select Round Name</option>
+                      <option *ngFor="let round of rounds"
+                      [ngValue]="round.id">
+                        {{round.roundName}}
+                        </option>
+
+                  </select>
+              </div>
+            </div>
+            
+            <div class="row mb-4">
+              <label for="adminId" class="col-form-label col-lg-2" >Admin</label>
+                <div class="col-lg-10">
+                <input id="adminId"
+                name="adminId" type="text" class="form-control"
+                  placeholder="Enter Admin Name..."
+                  [(ngModel)]="trackInput.adminId">
+              </div>
+            </div>
+
+
+          <div class="row justify-content-end">
+            <div class="col-lg-10" >
+              <button
+              type="submit"
+              class="btn btn-primary"
+              >{{ isAddMode ? "Create Track" : "Edit Track" }}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- </ng-template> -->
+
+<!-- end row -->
+
+<!-- container-fluid -->
+
+
+
